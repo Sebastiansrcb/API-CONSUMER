@@ -2,10 +2,12 @@
 using ITsOkayAPI.Models.Dto;
 using ITsOkayAPI.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ITsOkayAPI.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     public class ContactosController : Controller
     {
         private readonly AppDbContext _context;
