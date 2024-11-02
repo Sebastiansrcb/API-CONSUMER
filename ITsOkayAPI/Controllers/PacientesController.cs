@@ -1,11 +1,13 @@
 ﻿using ITsOkayAPI.DataAccess;
 using ITsOkayAPI.Models;
 using ITsOkayAPI.Models.Dto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ITsOkayAPI.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     public class PacientesController : Controller
     {
         private readonly AppDbContext _context;
