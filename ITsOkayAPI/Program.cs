@@ -46,6 +46,7 @@ namespace ITsOkayAPI
                 app.UseSwaggerUI();
             }
 
+            app.UseMiddleware<TokenValidationMiddleware>(); // Agrega el middleware aquí
             app.UseHttpsRedirection();
 
             // Usa la autenticación y autorización en el pipeline

@@ -43,22 +43,36 @@ namespace ITsOkayAPI.Controllers
         {
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub, username),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-            };
+        new Claim(JwtRegisteredClaimNames.Sub, username),
+        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+    };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var expirationMinutes = int.Parse(_configuration["Jwt:TokenExpirationInMinutes"]);
+            var expiration = DateTime.Now.AddMinutes(expirationMinutes);
 
             var token = new JwtSecurityToken(
                 issuer: _configuration["Jwt:Issuer"],
                 audience: _configuration["Jwt:Audience"],
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(30),
+                expires: expiration,
                 signingCredentials: creds);
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            var jwtToken = new JwtSecurityTokenHandler().WriteToken(token);
+
+            // Guarda el token en la base de datos para el usuario
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.Nombre == username);
+            if (usuario != null)
+            {
+                usuario.LastToken = jwtToken;
+                _context.SaveChanges();
+            }
+
+            return jwtToken;
         }
+
         public class LoginDto
         {
             public string Username { get; set; }
