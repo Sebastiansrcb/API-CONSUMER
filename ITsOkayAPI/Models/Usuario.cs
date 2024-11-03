@@ -25,7 +25,7 @@ namespace ITsOkayAPI.Models
         public string Instituto { get; set; }
 
 
-        [StringLength(255)]
-        public string LastToken { get; set; }
+        [StringLength(512)]
+        public string? LastToken { get; set; }
     }
 }
