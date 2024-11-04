@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITsOkayAPI", "ITsOkayAPI\ITsOkayAPI.csproj", "{76CB9E96-96CC-44A5-A614-74B056D7F365}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITsOkay", "ITsOkay\ITsOkay.csproj", "{98260B01-45F2-4B21-89E5-3E05C3C86DFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITsOkayAPI", "ITsOkayAPI\ITsOkayAPI.csproj", "{76CB9E96-96CC-44A5-A614-74B056D7F365}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{76CB9E96-96CC-44A5-A614-74B056D7F365}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76CB9E96-96CC-44A5-A614-74B056D7F365}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76CB9E96-96CC-44A5-A614-74B056D7F365}.Release|Any CPU.Build.0 = Release|Any CPU
-		{98260B01-45F2-4B21-89E5-3E05C3C86DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98260B01-45F2-4B21-89E5-3E05C3C86DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98260B01-45F2-4B21-89E5-3E05C3C86DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98260B01-45F2-4B21-89E5-3E05C3C86DFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
